@@ -349,10 +349,5 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /open_workflow_run
-/give_inputs.txt
-config.yml
-templates/
-/open_workflow_run
-/workflow_inputs.txt
-config.yml
+/config.yml
 templates/
