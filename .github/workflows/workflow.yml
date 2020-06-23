@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repo
+    - name: 'Checkout Github Action' 
+      uses: actions/checkout@master
+    
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1.1
+      with:
+        creds: ${{ secrets.SPN_CREDENTIALS_GIT_HOOKS_DTA }}
+
+    - name: Setup Node 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: 'npm install, build, and test'
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+       
+    - name: 'Run Azure webapp deploy action using Service Principal'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: Resnodeexpressappshubag
