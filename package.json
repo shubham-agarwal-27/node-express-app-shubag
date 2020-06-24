@@ -43,7 +43,7 @@
     "tweetnacl": "^1.0.3",
     "tweetsodium": "0.0.5",
     "util": "^0.12.3",
-    "uuid": "^8.1.0"
+    "uuid": "^8.2.0"
   },
   "engines": {
     "node": ">6.0.0"
