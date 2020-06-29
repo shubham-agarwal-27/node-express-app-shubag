@@ -28,4 +28,4 @@ jobs:
     - name: 'Run Azure webapp deploy action using Service Principal'
       uses: azure/webapps-deploy@v2
       with: 
-        app-name: LatestGitHooksRes
+        app-name: LatestGitHooksRes2

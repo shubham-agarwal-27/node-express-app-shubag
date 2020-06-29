@@ -8,7 +8,7 @@ var crypto = require('crypto');
 var keytar = require('keytar');
 var opn = require('open');
 
-var AuthenticationContext = require('adal-node').AuthenticationContext;
+
 
 var app = express();
 app.use(logger());
@@ -66,14 +66,6 @@ async function getCallback(callback, resource, redirectUri, client_id){
                 res.send(message);
                 return;
               }
-          
-            //   authenticationContext.acquireTokenWithRefreshToken(response.refreshToken, client_id, resource, function(refreshErr, refreshResponse) {
-            //     if (refreshErr) {
-            //       message += 'refreshError: ' + refreshErr.message + '\n';
-            //     }
-            //     message += '\nrefreshResponse: ' + JSON.stringify(refreshResponse);
-            //     message += '\n\n\nksnjksbjsbjsbjsbhjsbjksb';
-            //   });
             //   console.log(message);
               res.send(message);
               val = response;
@@ -108,6 +100,7 @@ async function OAuthARM(){
     await keytar.setPassword('graph', 'access_token', val['accessToken']);
     await keytar.setPassword('graph', 'token_type', val['tokenType']);
     await keytar.setPassword('graph', 'refresh_token', val['refreshToken']);
+    await keytar.setPassword('graph', 'tenant_id', val['tenantId']);
 
     var pass = await keytar.getPassword(graph_token, 'access_token');
     console.log(pass);
