@@ -9,7 +9,7 @@ var keytar = require('keytar');
 var opn = require('open');
 
 
-
+var AuthenticationContext = require('adal-node').AuthenticationContext;
 var app = express();
 app.use(logger());
 app.use(cookieParser('a deep secret'));
@@ -66,7 +66,7 @@ async function getCallback(callback, resource, redirectUri, client_id){
                 res.send(message);
                 return;
               }
-            //   console.log(message);
+              console.log(message);
               res.send(message);
               val = response;
               resolve();
@@ -105,6 +105,8 @@ async function OAuthARM(){
     var pass = await keytar.getPassword(graph_token, 'access_token');
     console.log(pass);
     pass = await keytar.getPassword(graph_token, 'token_type');
+    console.log(pass);
+    pass = await keytar.getPassword(graph_token, 'refresh_token');
     console.log(pass);
     pass = await keytar.getPassword(graph_token, 'refresh_token');
     console.log(pass);
