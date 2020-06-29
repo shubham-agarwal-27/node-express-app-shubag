@@ -1,19 +1,11 @@
 'use strict';
 var express = require('express');
-var logger = require('connect-logger');
-var cookieParser = require('cookie-parser');
-var session = require('cookie-session');
+var app = express();
 var fs = require('fs');
-var crypto = require('crypto');
 var keytar = require('keytar');
 var opn = require('open');
-
-
 var AuthenticationContext = require('adal-node').AuthenticationContext;
-var app = express();
-app.use(logger());
-app.use(cookieParser('a deep secret'));
-app.use(session({secret: '1234567890QWERTY'}));
+
 var client_id_graph = '3c2ff05c-d8db-48bf-ac19-9b0d7294e050';
 const client_id_arm = '33c31634-d8df-4199-99f6-ae4b3fef50cd';
 
@@ -26,7 +18,6 @@ var authorityUrl = sampleParameters.authorityHostUrl + '/' + sampleParameters.te
 var redirectUri = 'http://localhost:3000/callback';
 var resource_graph = 'https://graph.microsoft.com';
 var resource_arm = 'https://management.azure.com';
-// resource = '00000003-0000-0000-c000-000000000000';
 var templateAuthzUrl = 'https://login.microsoftonline.com/' + sampleParameters.tenant + '/oauth2/authorize?response_type=code&client_id=<client_id>&redirect_uri=<redirect_uri>&state=<state>&resource=<resource>&scope=<scope>';
 var scopeForGraph = 'offline_access%20user.read%20Directory.AccessAsUser.All';
 var scopeForARM = 'https://management.azure.com//user_impersonation';
