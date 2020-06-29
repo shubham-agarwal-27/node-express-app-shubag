@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: "Deploy Node JavsScript application using GitHub Actions"
+description: "Deploy Node Javsscript application using GitHub Actions"
 products:
 - GitHub Actions
 - Azure App service
