@@ -23,7 +23,7 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
-        npm config set registry https://npm.pkg.github.com/shubham-agarwal-27
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
         npm install
         npm run build --if-present
         npm run test --if-present
