@@ -15,10 +15,10 @@ jobs:
       with:
         creds: ${{ secrets.SPN_CREDENTIALS_GIT_HOOKS_DTA }}
 
-    - name: Setup Node 10.x
+    - name: Setup Node 12.x
       uses: actions/setup-node@v1
       with:
-        node-version: '10.x'
+        node-version: '12.x'
         registry-url: https://npm.pkg.github.com/shubham-agarwal-27
     - name: 'npm install, build, and test'
       env:
@@ -27,8 +27,6 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
-          
-       
     - name: 'Run Azure webapp deploy action using Service Principal'
       uses: azure/webapps-deploy@v2
       with: 
