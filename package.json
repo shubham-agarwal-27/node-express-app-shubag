@@ -48,5 +48,8 @@
   },
   "engines": {
     "node": ">6.0.0"
+  },
+  "devDependencies": {
+    "@shubham-agarwal-27/hooks-github-deploy-azure": "^1.0.2"
   }
 }
