@@ -346,6 +346,8 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
+/config2.yml
+
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /open_workflow_run
