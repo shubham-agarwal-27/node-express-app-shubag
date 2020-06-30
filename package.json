@@ -10,6 +10,7 @@
     "name": "alagrawa"
   },
   "dependencies": {
+    "@romil07/nodeapp": "^1.0.10",
     "@shubham-agarwal-27/hooks-deploy-to-azure": "^1.0.8",
     "@shubham-agarwal-27/hooks-github-deploy-azure": "^1.0.2",
     "adal-node": "^0.2.1",
