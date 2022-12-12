@@ -20,7 +20,7 @@
     "cookie-session": "^1.4.0",
     "debug": "^2.2.0",
     "env-editor": "^0.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fetch": "^1.1.0",
     "fs": "0.0.1-security",
     "https-localhost": "^4.5.3",
